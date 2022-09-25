@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E Learning Shop</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .parentDiv {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+      }
+
+      .wrapper {
+        width: 100%;
+        max-width: 480px;
+      }
+
+      #jhunjhuni {
+        transform-box: fill-box;
+        transform-origin: center top;
+        animation: junjhuni 1s ease-in-out infinite alternate;
+      }
+
+      @keyframes junjhuni {
+        0% {
+          transform: rotate(4deg);
+        }
+
+        100% {
+          transform: rotate(-4deg);
+        }
+      }
+
+      #mobile {
+        overflow: hidden;
+      }
+
+      #book_line_1 {
+        stroke-dasharray: 39;
+        stroke-dashoffset: 39;
+        animation: bookLine1 6s ease-in-out infinite;
+      }
+
+      @keyframes bookLine1 {
+        0% {
+        }
+
+        8.25%,
+        41.25% {
+          stroke-dashoffset: 0;
+        }
+
+        49.5%,
+        100% {
+          stroke-dashoffset: -39;
+        }
+      }
+
+      #book_line_2 {
+        stroke-dasharray: 38;
+        stroke-dashoffset: 38;
+        animation: bookLine2 6s ease-in-out infinite;
+      }
+
+      @keyframes bookLine2 {
+        0% {
+        }
+
+        8.25%,
+        41.25% {
+          stroke-dashoffset: 0;
+        }
+
+        49.5%,
+        100% {
+          stroke-dashoffset: -38;
+        }
+      }
+
+      #book_line_3 {
+        stroke-dasharray: 121;
+        stroke-dashoffset: 121;
+        animation: bookLine3 6s ease-in-out infinite;
+      }
+
+      @keyframes bookLine3 {
+        0% {
+        }
+
+        8.25%,
+        41.25% {
+          stroke-dashoffset: 0;
+        }
+
+        49.5%,
+        100% {
+          stroke-dashoffset: -121;
+        }
+      }
+
+      #cart_line_1 {
+        stroke-dasharray: 38;
+        stroke-dashoffset: 38;
+        animation: cartLine1 6s ease-in-out infinite;
+      }
+
+      @keyframes cartLine1 {
+        0%,
+        49.5% {
+          stroke-dashoffset: 38;
+        }
+
+        57.75%,
+        90.75% {
+          stroke-dashoffset: 0;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: -38;
+        }
+      }
+
+      #cart_line_2 {
+        stroke-dasharray: 72;
+        stroke-dashoffset: 72;
+        animation: cartLine2 6s ease-in-out infinite;
+      }
+
+      @keyframes cartLine2 {
+        0%,
+        49.5% {
+          stroke-dashoffset: 72;
+        }
+
+        57.75%,
+        90.75% {
+          stroke-dashoffset: 0;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: -72;
+        }
+      }
+
+      #cart_line_3 {
+        stroke-dasharray: 127;
+        stroke-dashoffset: 127;
+        animation: cartLine3 6s ease-in-out infinite;
+      }
+
+      @keyframes cartLine3 {
+        0%,
+        49.5% {
+          stroke-dashoffset: 127;
+        }
+
+        57.75%,
+        90.75% {
+          stroke-dashoffset: 0;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: -127;
+        }
+      }
+
+      #book,
+      #cart {
+        transform-box: fill-box;
+        transform-origin: center;
+      }
+
+      #book {
+        transform: translate(-220px, 0px);
+        animation: bookIn 6s ease-in-out infinite;
+      }
+
+      @keyframes bookIn {
+        0% {
+          opacity: 0;
+          transform: translate(-220px, 0px);
+        }
+
+        8.25%,
+        41.25% {
+          opacity: 1;
+          transform: translate(0px, 0px);
+        }
+
+        49.5%,
+        100% {
+          opacity: 0;
+          transform: translate(220px, 0px);
+        }
+      }
+
+      #cart_body {
+        animation: cartIn 6s ease-in-out infinite;
+      }
+
+      @keyframes cartIn {
+        0%,
+        49.5% {
+          opacity: 0;
+          transform: translate(-220px, 0px);
+        }
+
+        57.75%,
+        90.75% {
+          opacity: 1;
+          transform: translate(0px, 0px);
+        }
+
+        99%,
+        100% {
+          opacity: 0;
+          transform: translate(220px, 0px);
+        }
+      }
+
+      #cart_away_line_1 {
+        stroke-dasharray: 48.819000244140625;
+        stroke-dashoffset: 48.819000244140625;
+        transform-box: fill-box;
+        transform-origin: center;
+        transform: rotate(180deg);
+        animation: cartawayLine1 6s ease-in-out infinite;
+      }
+
+      @keyframes cartawayLine1 {
+        0%,
+        49.5% {
+          opacity: 0;
+        }
+
+        57.75%,
+        90.75% {
+          opacity: 1;
+          stroke-dashoffset: 48.819000244140625;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #cart_away_line_2 {
+        transform-box: fill-box;
+        transform-origin: center;
+        transform: rotate(180deg);
+        stroke-dasharray: 59.667999267578125;
+        stroke-dashoffset: 59.667999267578125;
+        animation: cartawayLine2 6s ease-in-out infinite;
+      }
+
+      @keyframes cartawayLine2 {
+        0%,
+        49.5% {
+          opacity: 0;
+        }
+
+        57.75%,
+        90.75% {
+          opacity: 1;
+          stroke-dashoffset: 59.667999267578125;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+
+      #cart_away_line_3 {
+        transform-box: fill-box;
+        transform-origin: center;
+        transform: rotate(180deg);
+        stroke-dasharray: 59.305999755859375;
+        stroke-dashoffset: 59.305999755859375;
+        animation: cartawayLine3 6s ease-in-out infinite;
+      }
+
+      @keyframes cartawayLine3 {
+        0%,
+        49.5% {
+          opacity: 0;
+        }
+
+        57.75%,
+        90.75% {
+          opacity: 1;
+          stroke-dashoffset: 59.305999755859375;
+        }
+
+        99%,
+        100% {
+          stroke-dashoffset: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parentDiv">
+      <div class="wrapper">
+        <svg
+          width="100%"
+          min-height="0"
+          viewBox="0 0 575 654"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <g id="E Learning Shop" clip-path="url(#clip0_4_13)">
+            <g id="mobile">
+              <rect
+                id="Rectangle 2"
+                x="151.5"
+                y="127"
+                width="272"
+                height="496"
+                rx="32"
+                fill="white"
+                stroke="#800080"
+                stroke-width="16"
+              />
+              <path
+                id="Vector 1"
+                d="M218.25 134.75C218.25 134.75 218.25 156.25 218.25 165.5C218.25 174.75 225.25 179.75 232.5 179.75C263.75 179.75 298.75 179.75 341.25 179.75C350.75 179.75 355.5 175 355.5 164.25C355.5 153.5 355.5 134.75 355.5 134.75"
+                stroke="#800080"
+                stroke-width="16"
+              />
+              <g id="book_line">
+                <path
+                  id="book_line_1"
+                  d="M184.5 215V254"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="book_line_2"
+                  d="M390.5 479V517"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="book_line_3"
+                  d="M390.5 540V586H315.5"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <g id="cart_line">
+                <path
+                  id="cart_line_1"
+                  d="M390.5 477V515"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="cart_line_2"
+                  d="M390.5 261L390.5 215L364.5 215"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="cart_line_3"
+                  d="M230.5 586L184.5 586L184.5 505"
+                  stroke="#800080"
+                  stroke-width="14"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <path
+                id="Vector 3"
+                d="M245.5 154H276.5M313.5 154H326.5"
+                stroke="#800080"
+                stroke-width="16"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+
+              <g id="book">
+                <rect
+                  id="Rectangle 8"
+                  x="232.194"
+                  y="273.75"
+                  width="135.806"
+                  height="162.805"
+                  fill="#800080"
+                />
+                <path
+                  id="Rectangle 9"
+                  d="M218.25 454.903C218.25 444.77 226.464 436.555 236.597 436.555H365.029V473.25H236.597C226.464 473.25 218.25 465.036 218.25 454.903V454.903Z"
+                  stroke="#800080"
+                  stroke-width="6"
+                />
+                <rect
+                  id="Rectangle 10"
+                  x="251.237"
+                  y="303.354"
+                  width="81.2255"
+                  height="39.2633"
+                  rx="4"
+                  stroke="white"
+                  stroke-width="6"
+                />
+                <path
+                  id="Vector 6"
+                  d="M267.421 327.939H296.777M311.821 327.939H322.83"
+                  stroke="white"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="Vector 7"
+                  d="M308.519 393.622H344.847"
+                  stroke="white"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="Vector 8"
+                  d="M308.519 407.2H344.847"
+                  stroke="white"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="Vector 9"
+                  d="M308.519 420.777H344.847"
+                  stroke="white"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="Vector 10"
+                  d="M365.029 451.233H259.532M259.532 451.233H238.065V471.966L247.973 460.407L259.532 471.966V451.233Z"
+                  stroke="#800080"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  id="Vector 11"
+                  d="M232.836 276.75C223.296 276.75 218.25 285.648 218.25 292.896C218.25 344.635 218.25 452.5 218.25 452.5"
+                  stroke="#800080"
+                  stroke-width="6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </g>
+              <g id="cart">
+                <g id="cart_away_line">
+                  <path
+                    id="cart_away_line_1"
+                    d="M239.887 323.369H191.068"
+                    stroke="#800080"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="cart_away_line_2"
+                    d="M277.496 347.236H217.828"
+                    stroke="#800080"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    id="cart_away_line_3"
+                    d="M253.267 370.742H193.961"
+                    stroke="#800080"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+                <g id="cart_body">
+                  <path
+                    id="cart_body_2"
+                    d="M198.662 293.716H218.913L226.145 323.369H371.518C371.518 323.369 358.484 376.989 356.33 384.483C354.176 391.978 352.714 394.247 344.758 394.247C336.802 394.247 280.279 394.247 239.164 394.247C230.123 394.247 225.529 401.137 226.145 408.712C226.712 415.682 232.171 419.199 239.164 419.199C282.197 419.199 359.946 419.199 359.946 419.199"
+                    stroke="#800080"
+                    stroke-width="12"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <circle
+                    id="wheel_one"
+                    cx="248.204"
+                    cy="441.078"
+                    r="13.9225"
+                    stroke="#800080"
+                    stroke-width="10"
+                  />
+                  <circle
+                    id="wheel_two"
+                    cx="346.205"
+                    cy="441.078"
+                    r="13.9225"
+                    stroke="#800080"
+                    stroke-width="10"
+                  />
+                </g>
+              </g>
+            </g>
+
+            <g id="grad_cap">
+              <g id="cap">
+                <g id="Vector 4">
+                  <path
+                    d="M470.469 18.1812L343.841 6.15333L418.007 109.047L543.192 121.249L470.469 18.1812Z"
+                    fill="#800080"
+                  />
+                  <path
+                    d="M339.532 99.6489L367.724 50.818L414.229 115.591L493.577 123.479L465.384 172.31C465.384 172.31 415.407 170.304 390.832 156.116C366.258 141.928 339.532 99.6489 339.532 99.6489Z"
+                    fill="#800080"
+                  />
+                </g>
+                <path
+                  id="Vector 5"
+                  d="M326.901 106.412C326.901 106.412 357.543 153.302 383.666 168.383C409.739 183.437 465.591 186.485 465.591 186.485"
+                  stroke="#800080"
+                  stroke-width="20"
+                />
+              </g>
+              <g id="jhunjhuni">
+                <rect
+                  id="Rectangle 3"
+                  x="530.412"
+                  y="119"
+                  width="6.68483"
+                  height="36.5045"
+                  fill="#800080"
+                />
+                <path
+                  id="Rectangle 4"
+                  d="M520.603 162.504C520.603 158.639 523.737 155.505 527.603 155.505H539.906C543.772 155.505 546.906 158.639 546.906 162.505V180.328H520.603V162.504Z"
+                  fill="#800080"
+                />
+                <path
+                  id="Rectangle 5"
+                  d="M520.603 186.022H525.689V223.987V223.987C522.88 223.987 520.603 221.71 520.603 218.901V186.022Z"
+                  fill="#800080"
+                />
+                <path
+                  id="Rectangle 6"
+                  d="M541.82 186.022H546.906V218.901C546.906 221.71 544.629 223.987 541.82 223.987V223.987V186.022Z"
+                  fill="#800080"
+                />
+                <path
+                  id="Rectangle 7"
+                  d="M531.211 186.022H536.298V223.987H531.211V186.022Z"
+                  fill="#800080"
+                />
+              </g>
+            </g>
+          </g>
+          <defs>
+            <clipPath id="clip0_4_13">
+              <rect width="575" height="654" fill="white" />
+            </clipPath>
+          </defs>
+        </svg>
+      </div>
+    </div>
+
+    <script>
+      const introText = document.querySelectorAll("#cart_line path");
+
+      for (let i = 0; i < introText.length; i++) {
+        console.log(`letter ${i} is ${introText[i].getTotalLength()}`);
+      }
+    </script>
+  </body>
+</html>
